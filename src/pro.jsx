@@ -12,6 +12,11 @@ class Pro extends Component {
   increment = () => {
     this.setState({ count: this.state.count + 1 });
   };
+  decrement = () => {
+    if (this.state.count > 0) {
+      this.setState({ count: this.state.count - 1 });
+    }
+  };
   render() {
     return (
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
@@ -21,12 +26,21 @@ class Pro extends Component {
             <span className="col-3 d-flex justify-content-center align-items-center">
               {this.state.name}
             </span>
-            <span className="col-3 d-flex justify-content-center align-items-center">
+            <span className="col-2 d-flex justify-content-center align-items-center">
               {this.state.count}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
               {this.getPrice()}
             </span>
+            <div className="col-1 p-1 d-flex justify-content-end">
+              <button
+                style={{ color: "white" }}
+                className="btn bg-info fs-5"
+                onClick={this.decrement}
+              >
+                -
+              </button>
+            </div>
             <div className="col-1 p-1 d-flex justify-content-end">
               <button
                 style={{ color: "white" }}
