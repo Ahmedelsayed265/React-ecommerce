@@ -6,9 +6,6 @@ class Pro extends Component {
   //   price: this.props.product.price,
   //   count: this.props.product.count,
   // };
-  getPrice() {
-    return this.props.product.count * this.props.product.price;
-  }
   // increment = () => {
   //   this.setState({ count: this.props.product.count + 1 });
   // };
@@ -17,6 +14,9 @@ class Pro extends Component {
   //     this.setState({ count: this.props.product.count - 1 });
   //   }
   // };
+  getPrice() {
+    return this.props.product.count * this.props.product.price;
+  }
   render() {
     return (
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
