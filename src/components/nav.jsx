@@ -3,10 +3,10 @@ class NavBar extends Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <h2 className="navbar-brand">
-            Bootstrap
+          <h2 className="navbar-brand ms-4">
+            Shopping Cart
           </h2>
         </div>
       </nav>
