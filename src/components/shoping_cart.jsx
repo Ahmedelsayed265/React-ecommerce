@@ -13,7 +13,29 @@ class Cart extends Component {
     // this.state.products.splice(i, 1);
     // this.setState({ products: this.state.products });
     let products = this.state.products.filter((p) => p.id !== i.id);
-    this.setState({products});
+    this.setState({ products });
+  };
+  increment = (i) => {
+    //clone
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products[index] = { ...products[index] };
+    //edit
+    products[index].count++;
+    //set
+    this.setState({ products });
+  };
+  decrement = (i) => {
+    //clone
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products[index] = { ...products[index] };
+    //edit
+    if (products[index].count > 0) {
+      products[index].count--;
+    }
+    //set
+    this.setState({ products });
   };
   render() {
     return (
@@ -28,6 +50,8 @@ class Cart extends Component {
               <Pro
                 key={product.id}
                 product={product}
+                onIncrement={this.increment}
+                onDecrement={this.decrement}
                 onDelete={this.deleteHandel}
               ></Pro>
             ))}

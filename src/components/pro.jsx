@@ -1,33 +1,35 @@
 import React, { Component } from "react";
 class Pro extends Component {
-  state = {
-    id: this.props.product.id,
-    name: this.props.product.name,
-    price: this.props.product.price,
-    count: this.props.product.count,
-  };
+  // state = {
+  //   id: this.props.product.id,
+  //   name: this.props.product.name,
+  //   price: this.props.product.price,
+  //   count: this.props.product.count,
+  // };
   getPrice() {
-    return this.state.count * this.state.price;
+    return this.props.product.count * this.props.product.price;
   }
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-  decrement = () => {
-    if (this.state.count > 0) {
-      this.setState({ count: this.state.count - 1 });
-    }
-  };
+  // increment = () => {
+  //   this.setState({ count: this.props.product.count + 1 });
+  // };
+  // decrement = () => {
+  //   if (this.props.product.count > 0) {
+  //     this.setState({ count: this.props.product.count - 1 });
+  //   }
+  // };
   render() {
     return (
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
         <div className="container">
           <div className="row">
-            <span className="badge bg-info fs-5 col-1">{this.state.id}</span>
+            <span className="badge bg-info fs-5 col-1">
+              {this.props.product.id}
+            </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
-              {this.state.name}
+              {this.props.product.name}
             </span>
             <span className="col-2 d-flex justify-content-center align-items-center">
-              {this.state.count}
+              {this.props.product.count}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
               {this.getPrice()}
@@ -36,7 +38,9 @@ class Pro extends Component {
               <button
                 style={{ color: "white" }}
                 className="btn bg-info fs-5"
-                onClick={this.decrement}
+                onClick={() => {
+                  this.props.onDecrement(this.props.product);
+                }}
               >
                 -
               </button>
@@ -45,7 +49,9 @@ class Pro extends Component {
               <button
                 style={{ color: "white" }}
                 className="btn bg-info fs-5"
-                onClick={this.increment}
+                onClick={() => {
+                  this.props.onIncrement(this.props.product);
+                }}
               >
                 +
               </button>
