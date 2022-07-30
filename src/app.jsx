@@ -9,6 +9,7 @@ class App extends Component {
       { id: 2, name: "Steak", price: 100, count: 10 },
       { id: 3, name: "salad", price: 20, count: 2 },
       { id: 4, name: "rice", price: 70, count: 4 },
+      { id: 5, name: "Mango", price: 100, count: 6 },
     ],
   };
   deleteHandel = (i) => {
@@ -42,7 +43,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar products={this.state.products} />
+        <NavBar
+          productsCount={this.state.products.filter((p) => p.count > 0).length}
+        />
         <Cart
           products={this.state.products}
           onIncrement={this.increment}
