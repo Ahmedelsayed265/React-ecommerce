@@ -42,10 +42,6 @@ class Cart extends Component {
       <React.Fragment>
         <div className="container mt-5">
           <div className="row">
-            <div className="col-12 d-flex justify-content-between">
-              <h2>Shoping Cart</h2>
-              <span>Sort By: price</span>
-            </div>
             {this.state.products.map((product) => (
               <Pro
                 key={product.id}
