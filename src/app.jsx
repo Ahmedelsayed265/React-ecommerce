@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import NavBar from "./components/nav";
 import Home from "./components/home";
 import About from "./components/about";
 import Contact from "./components/contact";
-import Cart from "./components/shoping_cart";
+// import Cart from "./components/shoping_cart";
 
 class App extends Component {
   state = {
@@ -52,15 +52,17 @@ class App extends Component {
           productsCount={this.state.products.filter((p) => p.count > 0).length}
         />
         <div className="container mt-5">
-          <Route path="./components/about" component={About} />
-          <Route path="./components/home" component={Home} />
-          <Route path="./components/contact" component={Contact} />
-          <Cart
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+          {/*<Cart
             products={this.state.products}
             onIncrement={this.increment}
             onDecrement={this.decrement}
             onDelete={this.deleteHandel}
-          />
+          />*/}
         </div>
       </React.Fragment>
     );
