@@ -1,5 +1,10 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+
 import NavBar from "./components/nav";
+import Home from "./components/home";
+import About from "./components/about";
+import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
 
 class App extends Component {
@@ -46,12 +51,17 @@ class App extends Component {
         <NavBar
           productsCount={this.state.products.filter((p) => p.count > 0).length}
         />
-        <Cart
-          products={this.state.products}
-          onIncrement={this.increment}
-          onDecrement={this.decrement}
-          onDelete={this.deleteHandel}
-        />
+        <div className="container mt-5">
+          <Route path="./components/about" component={About} />
+          <Route path="./components/home" component={Home} />
+          <Route path="./components/contact" component={Contact} />
+          <Cart
+            products={this.state.products}
+            onIncrement={this.increment}
+            onDecrement={this.decrement}
+            onDelete={this.deleteHandel}
+          />
+        </div>
       </React.Fragment>
     );
   }

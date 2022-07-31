@@ -4,22 +4,20 @@ class Cart extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container mt-5">
-          <div className="row">
-            {this.props.products.map((product) => (
-              <Pro
-                key={product.id}
-                product={product}
-                onIncrement={this.props.onIncrement}
-                onDecrement={this.props.onDecrement}
-                onDelete={this.props.onDelete}
-              ></Pro>
-            ))}
-            <div className="col-12 mt-3">
-              <button style={{ color: "white" }} className="w-100 btn bg-info">
-                PROCEED TO PAY
-              </button>
-            </div>
+        <div className="row">
+          {this.props.products.map((product) => (
+            <Pro
+              key={product.id}
+              product={product}
+              onIncrement={this.props.onIncrement}
+              onDecrement={this.props.onDecrement}
+              onDelete={this.props.onDelete}
+            ></Pro>
+          ))}
+          <div className="col-12 mt-3">
+            <button style={{ color: "white" }} className="w-100 btn bg-info">
+              PROCEED TO PAY
+            </button>
           </div>
         </div>
       </React.Fragment>
