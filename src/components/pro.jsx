@@ -9,7 +9,7 @@ class Pro extends Component {
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
         <div className="container">
           <div className="row">
-            <span className="badge bg-info fs-5 col-1">
+            <span className="badge d-flex justify-content-center align-items-center bg-info fs-5 col-1">
               {this.props.product.id}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
