@@ -58,12 +58,13 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route
               path="/cart"
-              render={() => (
+              render={(props) => (
                 <Cart
                   products={this.state.products}
                   onIncrement={this.increment}
                   onDecrement={this.decrement}
                   onDelete={this.deleteHandel}
+                  {...props}
                 />
               )}
             />

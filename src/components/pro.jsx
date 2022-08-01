@@ -1,19 +1,5 @@
 import React, { Component } from "react";
 class Pro extends Component {
-  // state = {
-  //   id: this.props.product.id,
-  //   name: this.props.product.name,
-  //   price: this.props.product.price,
-  //   count: this.props.product.count,
-  // };
-  // increment = () => {
-  //   this.setState({ count: this.props.product.count + 1 });
-  // };
-  // decrement = () => {
-  //   if (this.props.product.count > 0) {
-  //     this.setState({ count: this.props.product.count - 1 });
-  //   }
-  // };
   getPrice() {
     return this.props.product.count * this.props.product.price;
   }
