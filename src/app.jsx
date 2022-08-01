@@ -69,7 +69,12 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/products/:id" component={Details} />
+            <Route
+              path="/products/:id/:name?"
+              render={(props) => (
+                <Details products={this.state.products} {...props} />
+              )}
+            />
           </Switch>
         </div>
       </React.Fragment>

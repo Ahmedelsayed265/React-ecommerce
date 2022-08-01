@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Pro extends Component {
   getPrice() {
     return this.props.product.count * this.props.product.price;
@@ -12,7 +13,9 @@ class Pro extends Component {
               {this.props.product.id}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
-              {this.props.product.name}
+              <Link to={`/products/${this.props.product.id}`}>
+                {this.props.product.name}
+              </Link>
             </span>
             <span className="col-2 d-flex justify-content-center align-items-center">
               {this.props.product.count}
