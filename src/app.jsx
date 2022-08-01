@@ -6,6 +6,7 @@ import Home from "./components/home";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
+import Details from "./components/proDetails";
 
 class App extends Component {
   state = {
@@ -68,13 +69,8 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/products/:id" component={Details} />
           </Switch>
-          {/*<Cart
-            products={this.state.products}
-            onIncrement={this.increment}
-            onDecrement={this.decrement}
-            onDelete={this.deleteHandel}
-          />*/}
         </div>
       </React.Fragment>
     );
