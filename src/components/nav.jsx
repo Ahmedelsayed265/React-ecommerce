@@ -18,10 +18,10 @@ const NavBar = (props) => {
             </Link>
           </div>
         </div>
-        <span className="badge bg-info me-4 fs-6">
+        <Link to="/cart" className="badge bg-info me-4 fs-6">
           <i className="fas fa-shopping-cart"></i>
           {props.productsCount}
-        </span>
+        </Link>
       </div>
     </nav>
   );
