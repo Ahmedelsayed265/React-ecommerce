@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/nav";
 import Home from "./components/home";
@@ -7,6 +7,7 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
 import Details from "./components/proDetails";
+import notfound from "./components/notFound";
 
 class App extends Component {
   state = {
@@ -75,6 +76,9 @@ class App extends Component {
                 <Details products={this.state.products} {...props} />
               )}
             />
+            <Route path="/notFound" component={notfound} />
+            <Redirect from="/home" to="/" />
+            <Redirect to="/notFound" />
           </Switch>
         </div>
       </React.Fragment>

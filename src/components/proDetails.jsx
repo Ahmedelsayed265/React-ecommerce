@@ -1,5 +1,8 @@
 import React from "react";
+import qs from "query-string";
 const Details = (props) => {
+  let res = qs.parse(props.location.search);
+  console.log(res);
   const product = props.products.filter(
     (c) => c.id === parseInt(props.match.params.id)
   )[0];
