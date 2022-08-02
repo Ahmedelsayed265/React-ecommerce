@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import qs from "query-string";
 class Details extends Component {
-  state = {};
   render() {
     let res = qs.parse(this.props.location.search);
     console.log(res);
