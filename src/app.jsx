@@ -55,7 +55,7 @@ class App extends Component {
         />
         <div className="container mt-5">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route
@@ -77,8 +77,8 @@ class App extends Component {
               )}
             />
             <Route path="/notFound" component={notfound} />
-            <Redirect from="/home" to="/" />
             <Redirect to="/notFound" />
+            <Redirect from="/" to="/home" />
           </Switch>
         </div>
       </React.Fragment>
