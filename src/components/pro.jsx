@@ -9,15 +9,12 @@ class Pro extends Component {
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
         <div className="container">
           <div className="row">
-            <span className="badge d-flex justify-content-center align-items-center bg-info fs-5 col-1">
-              {this.props.product.id}
-            </span>
-            <span className="col-3 d-flex justify-content-center align-items-center">
+            <span className="col-3 d-flex justify-content-start align-items-center">
               <Link to={`/products/${this.props.product.id}`}>
                 {this.props.product.name}
               </Link>
             </span>
-            <span className="col-2 d-flex justify-content-center align-items-center">
+            <span className="col-3 d-flex justify-content-center align-items-center">
               {this.props.product.count}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">

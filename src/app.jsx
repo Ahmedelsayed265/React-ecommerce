@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/nav";
 import Home from "./components/home";
+import Menu from "./components/menu";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
@@ -12,12 +13,23 @@ import notfound from "./components/notFound";
 class App extends Component {
   state = {
     products: [
-      { id: 1, name: "burger", price: 50, count: 5 },
-      { id: 2, name: "Steak", price: 100, count: 10 },
-      { id: 3, name: "salad", price: 20, count: 2 },
-      { id: 4, name: "rice", price: 70, count: 4 },
-      { id: 5, name: "Mango", price: 100, count: 6 },
+      { id: 1, name: "burger", price: 50, count: 0, inCart: false },
+      { id: 2, name: "Steak", price: 100, count: 0, inCart: false },
+      { id: 3, name: "salad", price: 20, count: 0, inCart: false },
+      { id: 4, name: "rice", price: 70, count: 0, inCart: false },
+      { id: 5, name: "Mango", price: 100, count: 0, inCart: false },
     ],
+  };
+  inCartChange = (i) => {
+    //clone
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products[index] = { ...products[index] };
+    //edit
+    products[index].inCart = !products[index].inCart;
+    products[index].count = 1;
+    //set
+    this.setState({ products });
   };
   deleteHandel = (i) => {
     // this.state.products.splice(i, 1);
@@ -56,13 +68,23 @@ class App extends Component {
         <div className="container mt-5">
           <Switch>
             <Route path="/home" component={Home} />
+            <Route
+              path="/menu"
+              render={(props) => (
+                <Menu
+                  products={this.state.products}
+                  onCartChange={this.inCartChange}
+                  {...props}
+                />
+              )}
+            />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route
               path="/cart"
               render={(props) => (
                 <Cart
-                  products={this.state.products}
+                  products={this.state.products.filter((p) => p.inCart)}
                   onIncrement={this.increment}
                   onDecrement={this.decrement}
                   onDelete={this.deleteHandel}
