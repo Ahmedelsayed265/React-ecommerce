@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pro from "./pro";
 class Cart extends Component {
   isEmpty() {
-    if (this.props.products.lenght === 0) {
-      return <h1>Your Cart Is Empty</h1>;
+    if (this.props.products.length === 0) {
+      return (
+        <h2 className="w-100 text-center">
+          Your Cart Is Empty \ <Link to="/menu">Menu</Link>
+        </h2>
+      );
     } else {
       return this.props.products.map((product) => (
         <Pro
