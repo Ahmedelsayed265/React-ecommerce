@@ -42,12 +42,6 @@ class App extends Component {
     //set
     this.setState({ products });
   };
-  // deleteHandel = (i) => {
-  //   // this.state.products.splice(i, 1);
-  //   // this.setState({ products: this.state.products });
-  //   let products = this.state.products.filter((p) => p.id !== i.id);
-  //   this.setState({ products });
-  // };
   increment = (i) => {
     //clone
     let products = [...this.state.products];
@@ -74,7 +68,9 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar
-          productsCount={this.state.products.filter((p) => p.count > 0).length}
+          productsCount={
+            this.state.products.filter((p) => p.inCart && p.count > 0).length
+          }
         />
         <div className="container mt-5">
           <Switch>
