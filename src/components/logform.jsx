@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 class Form extends Component {
-  userName = React.createRef();
-  Email = React.createRef();
-  pass = React.createRef();
-  remember = React.createRef();
+  state = {
+    userName: "",
+    emailAddress: "",
+    password: "",
+    checked: undefined,
+  };
   submit = (e) => {
     e.preventDefault();
+  };
+  change = (e) => {
+    let state = { ...this.state };
+    state[e.currentTarget.name] = e.currentTarget.value;
+    this.setState(state);
   };
   render() {
     return (
@@ -15,24 +22,47 @@ class Form extends Component {
           <label htmlFor="usermail" className="form-label">
             Email address
           </label>
-          <input type="email" className="form-control" id="usermail" />
+          <input
+            name="emailAddress"
+            onChange={this.change}
+            type="email"
+            value={this.state.emailAddress}
+            className="form-control"
+            id="usermail"
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
             User name
           </label>
-          <input type="text" className="form-control" id="username" />
+          <input
+            name="userName"
+            onChange={this.change}
+            type="text"
+            value={this.state.userName}
+            className="form-control"
+            id="username"
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="userpass" className="form-label">
             Password
           </label>
-          <input type="password" className="form-control" id="userpass" />
+          <input
+            name="password"
+            onChange={this.change}
+            type="password"
+            value={this.state.password}
+            className="form-control"
+            id="userpass"
+          />
         </div>
         <div className="mb-3 form-check">
           <input
+            name="checked"
+            onChange={this.change}
             type="checkbox"
-            ref={this.remember}
+            value={this.state.checked}
             className="form-check-input"
             id="remember"
           />
