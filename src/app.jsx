@@ -9,6 +9,7 @@ import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
 import Details from "./components/proDetails";
 import notfound from "./components/notFound";
+import Form from './components/logform';
 
 class App extends Component {
   state = {
@@ -99,6 +100,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/login" component={Form}/>
             <Route
               path="/products/:id/:name?"
               render={(props) => (

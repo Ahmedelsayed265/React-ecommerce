@@ -5,9 +5,9 @@ class Cart extends Component {
   isEmpty() {
     if (this.props.products.length === 0) {
       return (
-        <h2 className="w-100 text-center">
+        <h3 className="w-100 text-center">
           Your Cart Is Empty \ <Link to="/menu">Menu</Link>
-        </h2>
+        </h3>
       );
     } else {
       return (

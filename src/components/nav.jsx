@@ -25,6 +25,9 @@ const NavBar = (props) => {
           <i className="fas fa-shopping-cart"></i>
           {props.productsCount}
         </Link>
+        <Link to="/login" className="badge bg-info me-4 fs-6">
+          register
+        </Link>
       </div>
     </nav>
   );
