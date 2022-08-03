@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import Pro from "./pro";
 class Cart extends Component {
   render() {
+    const { products, onIncrement, onDecrement, onDelete } = this.props;
     return (
       <React.Fragment>
         <div className="row">
-          {this.props.products.map((product) => (
+          {products.map((product) => (
             <Pro
               key={product.id}
               product={product}
-              onIncrement={this.props.onIncrement}
-              onDecrement={this.props.onDecrement}
-              onDelete={this.props.onDelete}
+              onIncrement={onIncrement}
+              onDecrement={onDecrement}
+              onDelete={onDelete}
             ></Pro>
           ))}
           <div className="col-12 mt-3">
