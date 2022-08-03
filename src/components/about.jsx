@@ -3,7 +3,6 @@ import { Route, Switch, Link } from "react-router-dom";
 import Team from "./team";
 import Company from "./company";
 class About extends Component {
-  state = {};
   render() {
     return (
       <div className="row">
