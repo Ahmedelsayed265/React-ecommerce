@@ -10,15 +10,30 @@ class Cart extends Component {
         </h2>
       );
     } else {
-      return this.props.products.map((product) => (
-        <Pro
-          key={product.id}
-          product={product}
-          onIncrement={this.props.onIncrement}
-          onDecrement={this.props.onDecrement}
-          onDelete={this.props.onDelete}
-        ></Pro>
-      ));
+      return (
+        <React.Fragment>
+          <div className="col-12">
+            <div className="container">
+              <div className="row">
+                <div className="col-3">Name</div>
+                <div className="col-3 d-flex justify-content-center">Count</div>
+                <div className="col-3 d-flex justify-content-center">
+                  TotalPrice
+                </div>
+              </div>
+            </div>
+          </div>
+          {this.props.products.map((product) => (
+            <Pro
+              key={product.id}
+              product={product}
+              onIncrement={this.props.onIncrement}
+              onDecrement={this.props.onDecrement}
+              onDelete={this.props.onDelete}
+            ></Pro>
+          ))}
+        </React.Fragment>
+      );
     }
   }
   render() {

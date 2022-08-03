@@ -31,12 +31,23 @@ class App extends Component {
     //set
     this.setState({ products });
   };
-  deleteHandel = (i) => {
-    // this.state.products.splice(i, 1);
-    // this.setState({ products: this.state.products });
-    let products = this.state.products.filter((p) => p.id !== i.id);
+  inCartDelete = (i) => {
+    //clone
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products[index] = { ...products[index] };
+    //edit
+    products[index].inCart = !products[index].inCart;
+    products[index].count = 0;
+    //set
     this.setState({ products });
   };
+  // deleteHandel = (i) => {
+  //   // this.state.products.splice(i, 1);
+  //   // this.setState({ products: this.state.products });
+  //   let products = this.state.products.filter((p) => p.id !== i.id);
+  //   this.setState({ products });
+  // };
   increment = (i) => {
     //clone
     let products = [...this.state.products];
@@ -87,7 +98,7 @@ class App extends Component {
                   products={this.state.products.filter((p) => p.inCart)}
                   onIncrement={this.increment}
                   onDecrement={this.decrement}
-                  onDelete={this.deleteHandel}
+                  onDelete={this.inCartDelete}
                   {...props}
                 />
               )}
