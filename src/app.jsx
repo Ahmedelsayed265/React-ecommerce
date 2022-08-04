@@ -15,11 +15,11 @@ import Form from "./components/logform";
 class App extends Component {
   state = {
     products: [
-      { id: 1, name: "burger", price: 50, count: 0, inCart: false },
-      { id: 2, name: "Steak", price: 100, count: 0, inCart: false },
-      { id: 3, name: "salad", price: 20, count: 0, inCart: false },
-      { id: 4, name: "rice", price: 70, count: 0, inCart: false },
-      { id: 5, name: "Mango", price: 100, count: 0, inCart: false },
+      // { id: 1, name: "burger", price: 50, count: 0, inCart: false },
+      // { id: 2, name: "Steak", price: 100, count: 0, inCart: false },
+      // { id: 3, name: "salad", price: 20, count: 0, inCart: false },
+      // { id: 4, name: "rice", price: 70, count: 0, inCart: false },
+      // { id: 5, name: "Mango", price: 100, count: 0, inCart: false },
     ],
   };
   async componentDidMount() {

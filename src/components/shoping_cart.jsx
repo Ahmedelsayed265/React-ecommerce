@@ -34,6 +34,12 @@ class Cart extends Component {
       );
     }
   }
+  getSum() {
+    return this.props.products.reduce(
+      (acc, product) => acc + product.count * product.price,
+      0
+    );
+  }
   render() {
     return (
       <React.Fragment>
@@ -41,8 +47,7 @@ class Cart extends Component {
           {this.isEmpty()}
           <div className="col-12 mt-3">
             <button style={{ color: "white" }} className="w-100 btn bg-info">
-              PROCEED TO PAY
-              {this.props.products.map((product) => console.log(product))}$
+              PROCEED TO PAY {this.getSum()} $
             </button>
           </div>
         </div>
