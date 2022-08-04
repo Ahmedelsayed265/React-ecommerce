@@ -18,7 +18,7 @@ class Pro extends Component {
               {this.props.product.count}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
-              {this.getPrice()}
+              {this.getPrice()}$
             </span>
             <div className="col-1 p-1 d-flex justify-content-end">
               <button

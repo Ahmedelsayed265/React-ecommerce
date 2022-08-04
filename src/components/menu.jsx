@@ -18,7 +18,7 @@ class Menu extends Component {
             <tr key={product.id}>
               <th scope="row">{product.id}</th>
               <td>{product.name}</td>
-              <td>{product.price}</td>
+              <td>{product.price}$</td>
               <td>
                 <Add onCartChange={onCartChange} product={product} />
               </td>

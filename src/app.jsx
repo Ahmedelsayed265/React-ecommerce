@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/nav";
@@ -9,7 +10,7 @@ import Contact from "./components/contact";
 import Cart from "./components/shoping_cart";
 import Details from "./components/proDetails";
 import notfound from "./components/notFound";
-import Form from './components/logform';
+import Form from "./components/logform";
 
 class App extends Component {
   state = {
@@ -21,6 +22,18 @@ class App extends Component {
       { id: 5, name: "Mango", price: 100, count: 0, inCart: false },
     ],
   };
+  async componentDidMount() {
+    let promise = await axios.get(
+      "https://private-anon-c3563f41c9-pizzaapp.apiary-mock.com/restaurants/restaurantId/menu?category=Pizza&orderBy=rank"
+    );
+    let res = await promise.data;
+    this.setState({ products: res });
+    // let promise = await fetch(
+    //   "https://private-anon-c3563f41c9-pizzaapp.apiary-mock.com/restaurants/restaurantId/menu?category=Pizza&orderBy=rank"
+    // );
+    // let res = await promise.json();
+    // this.setState({ products: res });
+  }
   inCartChange = (i) => {
     //clone
     let products = [...this.state.products];
@@ -100,7 +113,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/login" component={Form}/>
+            <Route path="/login" component={Form} />
             <Route
               path="/products/:id/:name?"
               render={(props) => (

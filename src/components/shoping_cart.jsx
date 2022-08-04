@@ -17,9 +17,7 @@ class Cart extends Component {
               <div className="row">
                 <div className="col-3">Name</div>
                 <div className="col-3 d-flex justify-content-center">Count</div>
-                <div className="col-3 d-flex justify-content-center">
-                  TotalPrice
-                </div>
+                <div className="col-3 d-flex justify-content-center">Price</div>
               </div>
             </div>
           </div>
@@ -44,6 +42,7 @@ class Cart extends Component {
           <div className="col-12 mt-3">
             <button style={{ color: "white" }} className="w-100 btn bg-info">
               PROCEED TO PAY
+              {this.props.products.map((product) => console.log(product))}$
             </button>
           </div>
         </div>
