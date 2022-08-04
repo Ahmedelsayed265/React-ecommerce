@@ -4,7 +4,7 @@ class Form extends Component {
     userName: "",
     emailAddress: "",
     password: "",
-    checked: undefined,
+    checked: "",
   };
   submit = (e) => {
     e.preventDefault();
