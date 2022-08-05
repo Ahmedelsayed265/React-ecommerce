@@ -35,10 +35,9 @@ class Cart extends Component {
     }
   }
   getSum() {
-    return this.props.products.reduce(
-      (acc, product) => acc + product.count * product.price,
-      0
-    );
+    return this.props.products
+      .reduce((acc, product) => acc + product.count * product.price, 0)
+      .toFixed(2);
   }
   render() {
     return (

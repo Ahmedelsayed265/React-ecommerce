@@ -24,7 +24,7 @@ class App extends Component {
   };
   async componentDidMount() {
     let promise = await axios.get(
-      "https://private-anon-c3563f41c9-pizzaapp.apiary-mock.com/restaurants/restaurantId/menu?category=Pizza&orderBy=rank"
+      "http://localhost:3000/products"
     );
     let res = await promise.data;
     this.setState({ products: res });
