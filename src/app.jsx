@@ -70,6 +70,10 @@ class App extends Component {
     //set
     this.setState({ products });
   };
+  deleteProduct = (i) => {
+    let products = this.state.products.splice(i,1);
+    this.setState(products);
+  };
   render() {
     return (
       <React.Fragment>
@@ -109,7 +113,11 @@ class App extends Component {
             <Route
               path="/dashboard"
               render={(props) => (
-                <Pannel products={this.state.products} {...props} />
+                <Pannel
+                  products={this.state.products}
+                  {...props}
+                  onDelete={this.deleteProduct}
+                />
               )}
             />
             <Route

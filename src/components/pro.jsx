@@ -50,7 +50,7 @@ class Pro extends Component {
                   this.props.onDelete(this.props.product);
                 }}
               >
-                <i className="fas fa-trash"></i>
+                <i class="far fa-trash-alt"></i>
               </button>
             </div>
           </div>

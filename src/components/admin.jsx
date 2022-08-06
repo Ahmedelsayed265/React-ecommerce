@@ -1,4 +1,6 @@
 import React from "react";
+import Dpro from "./DFM";
+import Upro from "./UFM";
 const Pannel = (props) => {
   return (
     <table className="table">
@@ -15,8 +17,12 @@ const Pannel = (props) => {
           <tr key={product.id}>
             <td>{product.name}</td>
             <td>{product.price}</td>
-            <td>E</td>
-            <td>D</td>
+            <td>
+              <Upro />
+            </td>
+            <td>
+              <Dpro onDelete={props.onDelete} product={product} />
+            </td>
           </tr>
         ))}
       </tbody>
