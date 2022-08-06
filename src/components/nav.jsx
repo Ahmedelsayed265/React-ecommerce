@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 const NavBar = (props) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
         <h2 className="navbar-brand ms-4">Shopping Cart</h2>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
