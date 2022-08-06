@@ -1,8 +1,12 @@
 import React from "react";
-const productform = (product) => {
+const productform = (props) => {
   return (
     <React.Fragment>
-      <h1 className="text-center">Edit Product</h1>
+      {props.location.pathname === "/productform/new" ? (
+        <h1 className="text-center">Add Product</h1>
+      ) : (
+        <h1 className="text-center">Edit Product</h1>
+      )}
       <form>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
