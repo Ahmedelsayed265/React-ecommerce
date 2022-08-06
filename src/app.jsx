@@ -14,20 +14,11 @@ import Form from "./components/logform";
 
 class App extends Component {
   state = {
-    products: [
-      // { id: 1, name: "burger", price: 50, count: 0, inCart: false },
-      // { id: 2, name: "Steak", price: 100, count: 0, inCart: false },
-      // { id: 3, name: "salad", price: 20, count: 0, inCart: false },
-      // { id: 4, name: "rice", price: 70, count: 0, inCart: false },
-      // { id: 5, name: "Mango", price: 100, count: 0, inCart: false },
-    ],
+    products: [],
   };
   async componentDidMount() {
-    let promise = await axios.get(
-      "http://localhost:3000/products"
-    );
-    let res = await promise.data;
-    this.setState({ products: res });
+    let { data } = await axios.get("http://localhost:3000/products");
+    this.setState({ products: data });
     // let promise = await fetch(
     //   "https://private-anon-c3563f41c9-pizzaapp.apiary-mock.com/restaurants/restaurantId/menu?category=Pizza&orderBy=rank"
     // );
