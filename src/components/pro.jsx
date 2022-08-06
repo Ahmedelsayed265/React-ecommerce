@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 class Pro extends Component {
   getPrice() {
-    return this.props.product.count * this.props.product.price;
+    return (this.props.product.count * this.props.product.price).toFixed(2);
   }
   render() {
     return (
