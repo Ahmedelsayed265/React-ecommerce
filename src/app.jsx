@@ -12,7 +12,7 @@ import Details from "./components/proDetails";
 import notfound from "./components/notFound";
 import Form from "./components/logform";
 import Pannel from "./components/admin";
-import productform from "./components/editproduct";
+import productform from "./components/proForm";
 
 class App extends Component {
   state = {
