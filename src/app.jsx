@@ -12,7 +12,7 @@ import Details from "./components/proDetails";
 import notfound from "./components/notFound";
 import Form from "./components/logform";
 import Pannel from "./components/admin";
-import Edit from "./components/editproduct";
+import productform from "./components/editproduct";
 
 class App extends Component {
   state = {
@@ -129,7 +129,7 @@ class App extends Component {
                 <Details products={this.state.products} {...props} />
               )}
             />
-            <Route path="/Edit/:id" component={Edit} />
+            <Route path="/productform/:id?" component={productform} />
             <Route path="/notFound" component={notfound} />
             <Redirect to="/notFound" />
           </Switch>

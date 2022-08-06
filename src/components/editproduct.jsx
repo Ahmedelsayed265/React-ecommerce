@@ -1,5 +1,5 @@
 import React from "react";
-const Edit = (product) => {
+const productform = (product) => {
   return (
     <React.Fragment>
       <h1 className="text-center">Edit Product</h1>
@@ -24,4 +24,4 @@ const Edit = (product) => {
   );
 };
 
-export default Edit;
+export default productform;
