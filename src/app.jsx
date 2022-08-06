@@ -71,8 +71,10 @@ class App extends Component {
     this.setState({ products });
   };
   deleteProduct = (i) => {
-    let products = this.state.products.splice(i,1);
-    this.setState(products);
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products.splice(index, 1);
+    this.setState({products});
   };
   render() {
     return (
