@@ -25,9 +25,29 @@ const NavBar = (props) => {
           <i className="fas fa-shopping-cart"></i>
           {props.productsCount}
         </Link>
-        <Link to="/login" className="badge bg-info me-4 fs-6">
-          register
-        </Link>
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Log In
+          </button>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <Link to="/login" className="dropdown-item">
+                register
+              </Link>
+            </li>
+            <li>
+              <Link to="/dashboard" className="dropdown-item">
+                Admin
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
