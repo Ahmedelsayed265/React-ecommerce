@@ -21,11 +21,7 @@ const NavBar = (props) => {
             </NavLink>
           </div>
         </div>
-        <Link to="/cart" className="badge bg-info me-4 fs-6">
-          <i className="fas fa-shopping-cart"></i>
-          {props.productsCount}
-        </Link>
-        <div className="dropdown">
+        <div className="dropdown me-2">
           <button
             className="btn btn-secondary dropdown-toggle"
             type="button"
@@ -48,6 +44,10 @@ const NavBar = (props) => {
             </li>
           </ul>
         </div>
+        <Link to="/cart" className="badge bg-info me-4 fs-6">
+          <i className="fas fa-shopping-cart"></i>
+          {props.productsCount}
+        </Link>
       </div>
     </nav>
   );
