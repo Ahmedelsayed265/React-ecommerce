@@ -11,6 +11,7 @@ import Cart from "./components/shoping_cart";
 import Details from "./components/proDetails";
 import notfound from "./components/notFound";
 import Form from "./components/logform";
+import Pannel from "./components/admin";
 
 class App extends Component {
   state = {
@@ -105,6 +106,12 @@ class App extends Component {
               )}
             />
             <Route path="/login" component={Form} />
+            <Route
+              path="/dashboard"
+              render={(props) => (
+                <Pannel products={this.state.products} {...props} />
+              )}
+            />
             <Route
               path="/products/:id/:name?"
               render={(props) => (
