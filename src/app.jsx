@@ -113,7 +113,6 @@ class App extends Component {
             />
             <Route path="/notFound" component={notfound} />
             <Redirect to="/notFound" />
-            <Redirect from="/" to="/home" />
           </Switch>
         </div>
       </React.Fragment>
