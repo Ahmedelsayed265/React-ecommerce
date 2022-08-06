@@ -1,9 +1,14 @@
 import React from "react";
-const Upro = () => {
+import { Link } from "react-router-dom";
+
+const Upro = (props) => {
   return (
-    <span style={{ cursor: "pointer", color: "black" }}>
+    <Link
+      to={`/Edit/${props.product.id}`}
+      style={{ cursor: "pointer", color: "black" }}
+    >
       <i className="fas fa-edit"></i>
-    </span>
+    </Link>
   );
 };
 

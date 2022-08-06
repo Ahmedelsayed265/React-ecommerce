@@ -18,7 +18,7 @@ const Pannel = (props) => {
             <td>{product.name}</td>
             <td>{product.price}</td>
             <td>
-              <Upro />
+              <Upro product={product}/>
             </td>
             <td>
               <Dpro onDelete={props.onDelete} product={product} />

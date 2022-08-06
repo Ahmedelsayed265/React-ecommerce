@@ -12,6 +12,7 @@ import Details from "./components/proDetails";
 import notfound from "./components/notFound";
 import Form from "./components/logform";
 import Pannel from "./components/admin";
+import Edit from "./components/editproduct";
 
 class App extends Component {
   state = {
@@ -74,7 +75,7 @@ class App extends Component {
     let products = [...this.state.products];
     let index = products.indexOf(i);
     products.splice(index, 1);
-    this.setState({products});
+    this.setState({ products });
   };
   render() {
     return (
@@ -87,6 +88,9 @@ class App extends Component {
         <div className="container mt-5">
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/login" component={Form} />
             <Route
               path="/menu"
               render={(props) => (
@@ -97,8 +101,6 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
             <Route
               path="/cart"
               render={(props) => (
@@ -111,7 +113,6 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/login" component={Form} />
             <Route
               path="/dashboard"
               render={(props) => (
@@ -128,6 +129,7 @@ class App extends Component {
                 <Details products={this.state.products} {...props} />
               )}
             />
+            <Route path="/Edit/:id" component={Edit} />
             <Route path="/notFound" component={notfound} />
             <Redirect to="/notFound" />
           </Switch>
