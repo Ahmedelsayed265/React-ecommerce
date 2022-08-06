@@ -21,7 +21,7 @@ const NavBar = (props) => {
             </NavLink>
           </div>
         </div>
-        <div className="dropdown me-2">
+        <div className="dropdown me-3">
           <button
             className="btn btn-secondary dropdown-toggle"
             type="button"
