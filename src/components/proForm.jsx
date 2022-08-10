@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+import { axios } from "axios";
 class productform extends Component {
   state = {
     name: "",
     price: "",
   };
-  onSave = (e) => {
+  onSave = async (e) => {
     e.preventDefault();
-    console.log("saved");
+    if (this.props.location.pathname === "/productform/new") {
+      let newPro = { ...this.state, count: 0, inCart: false };
+      await axios.post("http://localhost:3000/products", newPro);
+    }
   };
   change = (e) => {
     let state = { ...this.state };
