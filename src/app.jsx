@@ -21,11 +21,6 @@ class App extends Component {
   async componentDidMount() {
     let { data } = await axios.get("http://localhost:3000/products");
     this.setState({ products: data });
-    // let promise = await fetch(
-    //   "https://private-anon-c3563f41c9-pizzaapp.apiary-mock.com/restaurants/restaurantId/menu?category=Pizza&orderBy=rank"
-    // );
-    // let res = await promise.json();
-    // this.setState({ products: res });
   }
   inCartChange = (i) => {
     //clone
