@@ -1,6 +1,6 @@
 import React from "react";
 const notfound = () => {
-  return <img className="w-100 h-100" src="6M513.png" alt=""/>;
+  return <h1 className="text-center">Page not fount</h1>;
 };
 
 export default notfound;
