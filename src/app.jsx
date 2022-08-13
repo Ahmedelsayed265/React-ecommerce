@@ -73,7 +73,7 @@ class App extends Component {
     // let index = products.indexOf(i);
     // products.splice(index, 1);
     // this.setState({ products });
-    await axios.delete("https://market-food-api.herokuapp.com/products",{});
+    await axios.delete("https://market-food-api.herokuapp.com/products/" + i);
   };
   render() {
     return (
