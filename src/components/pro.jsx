@@ -5,17 +5,18 @@ class Pro extends Component {
     return (this.props.product.count * this.props.product.price).toFixed(2);
   }
   render() {
+    const { product, onDecrement, onIncrement, onDelete } = this.props;
     return (
       <div className="col-12 d-flex justify-content-between mt-3 mb-3">
         <div className="container">
           <div className="row">
             <span className="col-3 d-flex justify-content-start align-items-center">
               <Link to={`/products/${this.props.product.id}`}>
-                {this.props.product.name}
+                {product.name}
               </Link>
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
-              {this.props.product.count}
+              {product.count}
             </span>
             <span className="col-3 d-flex justify-content-center align-items-center">
               {this.getPrice()}$
@@ -25,7 +26,7 @@ class Pro extends Component {
                 style={{ color: "white" }}
                 className="btn bg-info fs-5"
                 onClick={() => {
-                  this.props.onDecrement(this.props.product);
+                  onDecrement(this.props.product);
                 }}
               >
                 -
@@ -36,7 +37,7 @@ class Pro extends Component {
                 style={{ color: "white" }}
                 className="btn bg-info fs-5"
                 onClick={() => {
-                  this.props.onIncrement(this.props.product);
+                  onIncrement(this.props.product);
                 }}
               >
                 +
@@ -47,7 +48,7 @@ class Pro extends Component {
                 style={{ color: "white" }}
                 className="btn bg-info fs-5"
                 onClick={() => {
-                  this.props.onDelete(this.props.product);
+                  onDelete(this.props.product);
                 }}
               >
                 <i class="far fa-trash-alt"></i>
