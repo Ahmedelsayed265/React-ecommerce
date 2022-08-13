@@ -69,11 +69,13 @@ class App extends Component {
     this.setState({ products });
   };
   deleteProduct = async (i) => {
-    // let products = [...this.state.products];
-    // let index = products.indexOf(i);
-    // products.splice(index, 1);
-    // this.setState({ products });
-    await axios.delete("https://market-food-api.herokuapp.com/products/" + i);
+    await axios.delete(
+      "https://market-food-api.herokuapp.com/products/" + i.id
+    );
+    let products = [...this.state.products];
+    let index = products.indexOf(i);
+    products.splice(index, 1);
+    this.setState({ products });
   };
   render() {
     return (
