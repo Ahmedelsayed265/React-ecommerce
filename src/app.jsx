@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import NavBar from "./components/nav";
 import Home from "./components/home";
@@ -69,17 +71,24 @@ class App extends Component {
     this.setState({ products });
   };
   deleteProduct = async (i) => {
-    await axios.delete(
-      "https://market-food-api.herokuapp.com/products/" + i.id
-    );
+    const oldProducts = [...this.state.products];
     let products = [...this.state.products];
     let index = products.indexOf(i);
     products.splice(index, 1);
     this.setState({ products });
+    try {
+      await axios.delete(
+        "https://market-food-api.herokuapp.com/products/54" + i.id
+      );
+    } catch (error) {
+      toast.error("can not delete item");
+      this.setState({ products: oldProducts });
+    }
   };
   render() {
     return (
       <React.Fragment>
+        <ToastContainer />
         <NavBar
           productsCount={
             this.state.products.filter((p) => p.inCart && p.count > 0).length
