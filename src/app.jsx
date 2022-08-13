@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 import NavBar from "./components/nav";
 import Home from "./components/home";
@@ -78,7 +77,7 @@ class App extends Component {
     this.setState({ products });
     try {
       await axios.delete(
-        "https://market-food-api.herokuapp.com/products/54" + i.id
+        "https://market-food-api.herokuapp.com/products/" + i.id
       );
     } catch (error) {
       toast.error("can not delete item");
