@@ -11,6 +11,7 @@ class productform extends Component {
       let newPro = { ...this.state, count: 0, inCart: false };
       await axios.post("https://market-food-api.herokuapp.com/products", newPro);
     }
+    this.props.history.replace("/dashboard")
   };
   change = (e) => {
     let state = { ...this.state };
