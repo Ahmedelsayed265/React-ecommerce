@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { axios } from "axios";
+import axios from "axios";
 class productform extends Component {
   state = {
     name: "",
@@ -9,7 +9,7 @@ class productform extends Component {
     e.preventDefault();
     if (this.props.location.pathname === "/productform/new") {
       let newPro = { ...this.state, count: 0, inCart: false };
-      await axios.post("http://localhost:3000/products", newPro);
+      await axios.post("https://market-food-api.herokuapp.com/products", newPro);
     }
   };
   change = (e) => {

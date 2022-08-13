@@ -19,7 +19,9 @@ class App extends Component {
     products: [],
   };
   async componentDidMount() {
-    let { data } = await axios.get("http://localhost:3000/products");
+    let { data } = await axios.get(
+      "https://market-food-api.herokuapp.com/products"
+    );
     this.setState({ products: data });
   }
   inCartChange = (i) => {
@@ -66,11 +68,12 @@ class App extends Component {
     //set
     this.setState({ products });
   };
-  deleteProduct = (i) => {
-    let products = [...this.state.products];
-    let index = products.indexOf(i);
-    products.splice(index, 1);
-    this.setState({ products });
+  deleteProduct = async (i) => {
+    // let products = [...this.state.products];
+    // let index = products.indexOf(i);
+    // products.splice(index, 1);
+    // this.setState({ products });
+    await axios.delete("https://market-food-api.herokuapp.com/products",{});
   };
   render() {
     return (
